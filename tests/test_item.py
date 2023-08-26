@@ -16,3 +16,17 @@ def test_apply_discount(test_item):
     test_item.pay_rate = 1.5
     test_item.apply_discount()
     assert test_item.price == 7500
+
+
+def test_name(test_item):
+    test_item.name = 'Notebook'
+    assert test_item.name == 'Notebook'
+
+
+def test_name(test_item):
+    test_item.name = 'SuperNotebook'
+    assert test_item.name == 'SuperNoteb'
+
+
+def test_string_to_number(test_item):
+    assert test_item.string_to_number('10.0') == 10
