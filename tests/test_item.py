@@ -8,6 +8,14 @@ def test_item():
     return Item('TV', 5000, 10)
 
 
+def test__repr__(test_item):
+    assert test_item.__repr__() == 'Item(TV, 5000, 10)'
+
+
+def test__str__(test_item):
+    assert test_item.__str__() == 'TV'
+
+
 def test_calculate_total_price(test_item):
     assert test_item.calculate_total_price() == 50000
 
