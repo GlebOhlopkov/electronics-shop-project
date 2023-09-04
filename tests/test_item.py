@@ -9,11 +9,15 @@ def test_item():
 
 
 def test__repr__(test_item):
-    assert test_item.__repr__() == 'Item(TV, 5000, 10)'
+    assert test_item.__repr__() == "Item('TV', 5000, 10)"
 
 
 def test__str__(test_item):
     assert test_item.__str__() == 'TV'
+
+
+def test__add__(test_item):
+    assert test_item.__add__(Item('Notebook',15000, 20)) == 30
 
 
 def test_calculate_total_price(test_item):
