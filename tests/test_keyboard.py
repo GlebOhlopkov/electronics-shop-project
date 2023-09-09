@@ -41,3 +41,9 @@ def test_name(test_item):
 
 def test_string_to_number(test_item):
     assert test_item.string_to_number('10.0') == 10
+
+
+def test_language(test_item):
+    assert test_item.language == 'EN'
+    test_item.change_lang()
+    assert test_item.language == 'RU'
