@@ -83,10 +83,10 @@ class Item:
             if not csv_file:
                 raise CSVNotFound
 
-            with open(csv_file, newline='', encoding='windows-1251') as csvfile:
+            with open('../src/items.csv', newline='', encoding='windows-1251') as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
-                    if len(row.split(',')) < 3:
+                    if not row.get('name') and not row.get('price') and not row.get('quantity'):
                         raise InstantiateCSVError
                     cls(row['name'], row['price'], row['quantity'])
 
